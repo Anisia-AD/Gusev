@@ -1,0 +1,37 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <!-- Кнопка ЗАПИСЬ -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'appointment' %}" class="nav-link" style="display: inline-block; font-size: 22px; padding: 10px 40px;">Запись</a>
+    </div>
+
+    <!-- Кнопка УСЛУГИ (под Записью) -->
+    <div style="text-align: center; margin-top: 15px; margin-bottom: 40px;">
+        <a href="{% url 'services' %}" class="nav-link" style="display: inline-block; font-size: 22px; padding: 10px 40px;">Услуги</a>
+    </div>
+
+    <!-- КАРТА -->
+    <div class="map-container" style="margin-bottom: 50px;">
+        <iframe 
+            src="https://yandex.ru/map-widget/v1/?ll=30.279953,59.939640&z=17&pt=30.279953,59.939640,flag&whatshere[point]=30.279953,59.939640&whatshere[zoom]=17" 
+            allowfullscreen
+            style="width: 100%; height: 300px; display: block; border: none; border-radius: 12px;">
+        </iframe>
+    </div>
+
+    <!-- РУКОВОДИТЕЛЬ -->
+    <div class="boss-section">
+        <h2 class="boss-title">РУКОВОДИТЕЛЬ</h2>
+        <img src="{% static 'core/images/boss.jpg' %}" alt="Руководитель" class="boss-photo">
+    </div>
+
+    <!-- ИНН / ОГРНИП -->
+    <div class="org-info">
+        <p><strong>ИНН:</strong> 352833094053</p>
+        <p><strong>ОГРНИП:</strong> 326350000007548</p>
+    </div>
+
+{% endblock %}

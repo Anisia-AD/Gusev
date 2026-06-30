@@ -1,0 +1,62 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1 class="page-title">КОНТАКТЫ</h1>
+    
+    <div class="contacts-wrapper">
+        <!-- Телефон -->
+        <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <div class="contact-info">
+                <div class="contact-label">Телефон</div>
+                <a href="tel:+79991234567" class="contact-value">+7 (999) 123-45-67</a>
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-card">
+            <div class="contact-icon">✉️</div>
+            <div class="contact-info">
+                <div class="contact-label">Email</div>
+                <a href="mailto:info@prestolprava.ru" class="contact-value">info@prestolprava.ru</a>
+            </div>
+        </div>
+
+        <!-- Адрес -->
+        <div class="contact-card">
+            <div class="contact-icon">📍</div>
+            <div class="contact-info">
+                <div class="contact-label">Адрес</div>
+                <div class="contact-value">Санкт-Петербург, 8-я линия В.О., д. 25</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Соцсети и мессенджеры -->
+    <div class="social-section">
+        <h3 class="social-title">Мы в соцсетях и мессенджерах</h3>
+        <div class="social-grid-modern">
+            <a href="#" class="social-link">
+                <div class="social-icon-circle">
+                    <span class="social-icon-text">YouTube</span>
+                </div>
+            </a>
+            <a href="#" class="social-link">
+                <div class="social-icon-circle">
+                    <span class="social-icon-text">Макс</span>
+                </div>
+            </a>
+            <a href="#" class="social-link">
+                <div class="social-icon-circle">
+                    <span class="social-icon-text">ТГ</span>
+                </div>
+            </a>
+            <a href="#" class="social-link">
+                <div class="social-icon-circle">
+                    <span class="social-icon-text">ВК</span>
+                </div>
+            </a>
+        </div>
+        <p class="social-hint">Нажмите на иконку, чтобы перейти</p>
+    </div>
+{% endblock %}
