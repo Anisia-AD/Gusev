@@ -24,6 +24,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # Добавлено для статики
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -90,6 +91,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'core' / 'static',
 ]
 
+# Настройка WhiteNoise для продакшена
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ===== НАСТРОЙКА ПОЧТЫ =====
@@ -100,34 +104,3 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'anisiapodkatilova@yandex.ru'
 EMAIL_HOST_PASSWORD = 'yisnsuatcnexlwva'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-# ======================================================
-# ===== ДИАГНОСТИКА СТАТИКИ (временно) =====
-# ======================================================
-print("=" * 60)
-print("ДИАГНОСТИКА СТАТИЧЕСКИХ ФАЙЛОВ")
-print("=" * 60)
-print("BASE_DIR:", BASE_DIR)
-print("STATIC_URL:", STATIC_URL)
-print("STATIC_ROOT:", STATIC_ROOT)
-print("STATICFILES_DIRS:", STATICFILES_DIRS)
-
-static_path = BASE_DIR / 'core' / 'static'
-print(f"\nПуть к статике: {static_path}")
-print(f"Папка static существует: {static_path.exists()}")
-
-if static_path.exists():
-    print("\nСодержимое папки static:")
-    for root, dirs, files in os.walk(static_path):
-        print(f"  {root}:")
-        if dirs:
-            print(f"    Папки: {dirs}")
-        if files:
-            print(f"    Файлы: {files}")
-else:
-    print("\n❌ ПАПКА static НЕ НАЙДЕНА!")
-    print("Проверьте, что папка static лежит в core/")
-
-print("=" * 60)
-print("КОНЕЦ ДИАГНОСТИКИ")
-print("=" * 60)
