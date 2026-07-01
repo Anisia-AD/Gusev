@@ -83,6 +83,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+# ===== НАСТРОЙКА СТАТИЧЕСКИХ ФАЙЛОВ =====
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
@@ -99,3 +100,28 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'anisiapodkatilova@yandex.ru'
 EMAIL_HOST_PASSWORD = 'yisnsuatcnexlwva'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# ===== ДИАГНОСТИКА СТАТИКИ (временно) =====
+print("=" * 50)
+print("ДИАГНОСТИКА СТАТИЧЕСКИХ ФАЙЛОВ")
+print("=" * 50)
+print("BASE_DIR:", BASE_DIR)
+print("STATIC_URL:", STATIC_URL)
+print("STATIC_ROOT:", STATIC_ROOT)
+print("STATICFILES_DIRS:", STATICFILES_DIRS)
+
+# Проверяем, существует ли папка static
+static_path = BASE_DIR / 'core' / 'static'
+print(f"Папка static существует: {static_path.exists()}")
+if static_path.exists():
+    print("Содержимое папки static:")
+    for item in os.listdir(static_path):
+        print(f"  - {item}")
+        # Проверяем вложенные папки
+        item_path = static_path / item
+        if item_path.is_dir():
+            for subitem in os.listdir(item_path):
+                print(f"    - {subitem}")
+else:
+    print("Папка static НЕ НАЙДЕНА!")
+print("=" * 50)
