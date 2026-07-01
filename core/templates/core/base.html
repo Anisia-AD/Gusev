@@ -13,21 +13,17 @@
     <header class="header">
         <div class="container">
             <div class="navbar">
-                <!-- ЛОГОТИП (ИКОНКА) -->
                 <a href="{% url 'index' %}" class="logo-link">
                     <img src="{% static 'core/images/logo.png' %}" alt="Логотип" class="logo-img">
                 </a>
 
-                <!-- ЗАГОЛОВОК ПО ЦЕНТРУ -->
                 <div class="header-center">
                     <div class="title-main">ПРЕСТОЛ</div>
                     <div class="title-sub">ПРАВА</div>
                 </div>
 
-                <!-- ПРАВАЯ ЧАСТЬ (КНОПКА КОНТАКТЫ) -->
                 <div class="nav-right">
                     <a href="{% url 'contacts' %}" class="nav-btn-small">Контакты</a>
-                    <!-- УБИРАЕМ ССЫЛКУ "Услуги" ОТСЮДА -->
                 </div>
             </div>
         </div>
