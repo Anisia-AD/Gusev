@@ -101,27 +101,33 @@ EMAIL_HOST_USER = 'anisiapodkatilova@yandex.ru'
 EMAIL_HOST_PASSWORD = 'yisnsuatcnexlwva'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
+# ======================================================
 # ===== ДИАГНОСТИКА СТАТИКИ (временно) =====
-print("=" * 50)
+# ======================================================
+print("=" * 60)
 print("ДИАГНОСТИКА СТАТИЧЕСКИХ ФАЙЛОВ")
-print("=" * 50)
+print("=" * 60)
 print("BASE_DIR:", BASE_DIR)
 print("STATIC_URL:", STATIC_URL)
 print("STATIC_ROOT:", STATIC_ROOT)
 print("STATICFILES_DIRS:", STATICFILES_DIRS)
 
-# Проверяем, существует ли папка static
 static_path = BASE_DIR / 'core' / 'static'
+print(f"\nПуть к статике: {static_path}")
 print(f"Папка static существует: {static_path.exists()}")
+
 if static_path.exists():
-    print("Содержимое папки static:")
-    for item in os.listdir(static_path):
-        print(f"  - {item}")
-        # Проверяем вложенные папки
-        item_path = static_path / item
-        if item_path.is_dir():
-            for subitem in os.listdir(item_path):
-                print(f"    - {subitem}")
+    print("\nСодержимое папки static:")
+    for root, dirs, files in os.walk(static_path):
+        print(f"  {root}:")
+        if dirs:
+            print(f"    Папки: {dirs}")
+        if files:
+            print(f"    Файлы: {files}")
 else:
-    print("Папка static НЕ НАЙДЕНА!")
-print("=" * 50)
+    print("\n❌ ПАПКА static НЕ НАЙДЕНА!")
+    print("Проверьте, что папка static лежит в core/")
+
+print("=" * 60)
+print("КОНЕЦ ДИАГНОСТИКИ")
+print("=" * 60)
