@@ -585,6 +585,166 @@ body {
 }
 
 /* ==================================================== */
+/* ===== ОПИСАНИЕ АГЕНТСТВА НА ГЛАВНОЙ ===== */
+/* ==================================================== */
+
+.about-section {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #800000;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #800000;
+    border-radius: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.about-card {
+    background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.about-card:hover {
+    border-color: #800000;
+    box-shadow: 0 8px 30px rgba(128, 0, 0, 0.06);
+    transform: translateY(-4px);
+}
+
+.about-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.about-card-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Блок: Почему это важно для вас */
+.about-important {
+    background: #fafafa;
+    padding: 30px 35px;
+    border-radius: 16px;
+    border-left: 4px solid #800000;
+    margin-bottom: 30px;
+}
+
+.about-important-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-important-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Блок: Ценность для клиента */
+.about-value {
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 30px;
+}
+
+.about-value-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #800000;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-value-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Блок: Образование и практика */
+.about-education {
+    background: #fafafa;
+    padding: 30px 35px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    border-bottom: 3px solid #800000;
+}
+
+.about-education-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-education-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ==================================================== */
 /* ===== АДАПТИВНОСТЬ ===== */
 /* ==================================================== */
 
@@ -695,6 +855,24 @@ body {
     .social-grid-modern {
         gap: 14px;
     }
+    
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-title {
+        font-size: 28px;
+    }
+    
+    .about-card {
+        padding: 20px;
+    }
+    
+    .about-important,
+    .about-value,
+    .about-education {
+        padding: 20px 22px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -754,5 +932,19 @@ body {
     
     .social-icon-text {
         font-size: 8px;
+    }
+    
+    .about-title {
+        font-size: 24px;
+    }
+    
+    .about-card-title {
+        font-size: 18px;
+    }
+    
+    .about-important-text,
+    .about-value-text,
+    .about-education-text {
+        font-size: 14px;
     }
 }
