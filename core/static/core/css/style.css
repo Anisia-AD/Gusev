@@ -628,4 +628,104 @@ body {
     .contact-value {
         font-size: 14px;
     }
+    .social-section {
+    max-width: 700px;
+    margin: 0 auto 60px;
+    padding: 30px 20px;
+    background: #fafafa;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
+}
+
+.social-title {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.social-grid-modern {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    display: block;
+}
+
+.social-link:hover {
+    transform: translateY(-5px);
+}
+
+.social-icon-circle {
+    width: 64px;
+    height: 64px;
+    background: #ffffff;
+    border: 2px solid #e0e0e0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-link:hover .social-icon-circle {
+    background: #800000;
+    border-color: #800000;
+    box-shadow: 0 8px 30px rgba(128, 0, 0, 0.2);
+}
+
+.social-icon-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #800000;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    transition: color 0.3s ease;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.social-link:hover .social-icon-text {
+    color: #ffffff;
+}
+
+.social-hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: #aaaaaa;
+    margin-top: 18px;
+    font-style: italic;
+}
+
+/* Адаптивность для соцсетей */
+@media (max-width: 768px) {
+    .social-icon-circle {
+        width: 56px;
+        height: 56px;
+    }
+    
+    .social-grid-modern {
+        gap: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .social-icon-circle {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .social-icon-text {
+        font-size: 8px;
+    }
+}
 }
