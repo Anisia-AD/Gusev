@@ -104,3 +104,6 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'anisiapodkatilova@yandex.ru'
 EMAIL_HOST_PASSWORD = 'yisnsuatcnexlwva'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# Адрес, куда будут приходить заявки
+CONTACT_EMAIL = 'anisiiaAD@yandex.ru'
