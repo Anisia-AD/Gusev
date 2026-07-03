@@ -98,324 +98,348 @@ body {
     box-shadow: 0 2px 10px rgba(128, 0, 0, 0.15);
 }
 
-/* ===== ОБЩИЕ КНОПКИ ===== */
-.btn-primary, .btn-secondary, .btn-cta {
+/* ===== БОЛЬШАЯ КНОПКА (Запись, Услуги в центре) ===== */
+.nav-link {
     font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    font-size: 15px;
-    letter-spacing: 0.5px;
-    padding: 12px 32px;
-    border-radius: 4px;
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    border: 1px solid transparent;
-}
-.btn-primary {
-    background-color: #800000;
-    color: #ffffff;
-    border-color: #800000;
-}
-.btn-primary:hover {
-    background-color: #1a1a1a;
-    border-color: #1a1a1a;
-}
-.btn-secondary {
-    background-color: transparent;
-    color: #1a1a1a;
-    border-color: #1a1a1a;
-}
-.btn-secondary:hover {
-    background-color: #1a1a1a;
-    color: #ffffff;
-}
-.btn-cta {
-    background-color: #800000;
-    color: #ffffff;
-    border-color: #800000;
-    padding: 14px 48px;
-    font-size: 16px;
-}
-.btn-cta:hover {
-    background-color: #1a1a1a;
-    border-color: #1a1a1a;
-}
-
-/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
-
-/* Вступление */
-.hero-section {
-    padding: 40px 0 60px;
-    text-align: center;
-    border-bottom: 1px solid #e8e8e8;
-    margin-bottom: 60px;
-}
-.hero-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 44px;
-    font-weight: 700;
-    color: #1a1a1a;
-    margin-bottom: 20px;
-    letter-spacing: 0.5px;
-}
-.hero-description {
+    font-weight: 600;
     font-size: 18px;
-    color: #555555;
-    max-width: 680px;
-    margin: 0 auto 35px;
-    line-height: 1.8;
-}
-.hero-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-
-/* Принципы */
-.principles-section {
-    margin-bottom: 70px;
-}
-.principles-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 30px;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 45px;
-    letter-spacing: 0.5px;
-}
-.principles-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-}
-.principle-card {
-    padding: 30px 25px;
-    border: 1px solid #e8e8e8;
+    letter-spacing: 1px;
+    color: #800000;
+    text-decoration: none;
+    border: 2px solid #800000;
+    padding: 12px 40px;
     border-radius: 8px;
+    transition: all 0.3s ease;
+    display: inline-block;
+    background: transparent;
+}
+
+.nav-link:hover {
+    background-color: #800000;
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(128, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+/* ===== ЗАГОЛОВКИ СТРАНИЦ ===== */
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 700;
+    color: #800000;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #800000;
+    border-radius: 2px;
+}
+
+/* ===== ОПИСАНИЕ АГЕНТСТВА НА ГЛАВНОЙ ===== */
+.about-section {
+    max-width: 1000px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #800000;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #800000;
+    border-radius: 2px;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.about-card {
     background: #ffffff;
+    padding: 30px 25px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    text-align: center;
     transition: all 0.3s ease;
 }
-.principle-card:hover {
+
+.about-card:hover {
     border-color: #800000;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 8px 30px rgba(128, 0, 0, 0.06);
     transform: translateY(-4px);
 }
-.principle-number {
+
+.about-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-card-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    color: #555555;
+    line-height: 1.6;
+}
+
+.about-important {
+    background: #fafafa;
+    padding: 30px 35px;
+    border-radius: 16px;
+    border-left: 4px solid #800000;
+    margin-bottom: 30px;
+}
+
+.about-important-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-important-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.about-value {
+    background: #ffffff;
+    padding: 30px 35px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 30px;
+}
+
+.about-value-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #800000;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-value-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+.about-education {
+    background: #fafafa;
+    padding: 30px 35px;
+    border-radius: 16px;
+    border: 1px solid #e8e8e8;
+    border-bottom: 3px solid #800000;
+}
+
+.about-education-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.about-education-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== КАРТА ===== */
+.map-container {
+    margin: 40px 0 50px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e8e8e8;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 300px;
+    display: block;
+    border: none;
+}
+
+/* ===== РУКОВОДИТЕЛЬ ===== */
+.boss-section {
+    text-align: center;
+    margin: 50px 0 30px;
+    padding: 40px 20px;
+    background: linear-gradient(180deg, #fafafa 0%, #ffffff 100%);
+    border-radius: 16px;
+    border: 1px solid #f0f0f0;
+}
+
+.boss-title {
     font-family: 'Playfair Display', serif;
     font-size: 32px;
     font-weight: 700;
     color: #800000;
-    opacity: 0.5;
-    margin-bottom: 12px;
-    line-height: 1;
-}
-.principle-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 600;
-    color: #1a1a1a;
-    margin-bottom: 8px;
-}
-.principle-desc {
-    font-size: 15px;
-    color: #555555;
-    line-height: 1.7;
-}
-
-/* Превью услуг на главной (без иконок) */
-.services-preview {
-    background: #fafafa;
-    padding: 60px 40px;
-    border-radius: 12px;
-    margin-bottom: 70px;
-}
-.services-preview-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 35px;
-    letter-spacing: 0.5px;
-}
-.services-preview-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    max-width: 700px;
-    margin: 0 auto 30px;
-}
-.service-preview-item {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #1a1a1a;
-    text-align: center;
-    padding: 14px 10px;
-    background: #ffffff;
-    border-radius: 6px;
-    border: 1px solid #e8e8e8;
-    transition: all 0.2s ease;
-}
-.service-preview-item:hover {
-    border-color: #800000;
-}
-.services-preview-link { text-align: center; }
-.link-arrow {
-    font-family: 'Inter', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    color: #800000;
-    text-decoration: none;
-    border-bottom: 1px solid #800000;
-    padding-bottom: 2px;
-    transition: all 0.2s ease;
-}
-.link-arrow:hover { opacity: 0.7; }
-
-/* CTA Заявка */
-.cta-section {
-    background: #1a1a1a;
-    padding: 70px 40px;
-    border-radius: 12px;
-    margin-bottom: 70px;
-    text-align: center;
-}
-.cta-content { max-width: 600px; margin: 0 auto; }
-.cta-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 34px;
-    font-weight: 700;
-    color: #ffffff;
-    margin-bottom: 16px;
-    letter-spacing: 0.5px;
-}
-.cta-desc {
-    font-size: 17px;
-    color: #cccccc;
-    margin-bottom: 30px;
-    line-height: 1.7;
-}
-
-/* Карта */
-.map-section { margin-bottom: 70px; }
-.map-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 26px;
-    font-weight: 700;
-    color: #1a1a1a;
-    text-align: center;
-    margin-bottom: 30px;
-    letter-spacing: 0.5px;
-}
-.map-container {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    border: 1px solid #e8e8e8;
-}
-.map-container iframe { width: 100%; height: 350px; display: block; border: none; }
-
-/* Руководитель */
-.boss-section {
-    text-align: center;
-    padding: 40px 20px 30px;
-    border-top: 1px solid #e8e8e8;
-    margin-bottom: 30px;
-}
-.boss-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 28px;
-    font-weight: 700;
-    color: #1a1a1a;
     margin-bottom: 25px;
-    letter-spacing: 0.5px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
 }
+
 .boss-photo {
     width: 100%;
-    max-width: 280px;
+    max-width: 350px;
     height: auto;
-    border-radius: 50%;
-    border: 3px solid #f0f0f0;
-    margin-bottom: 18px;
+    border-radius: 12px;
+    border: 3px solid #800000;
+    box-shadow: 0 8px 30px rgba(128, 0, 0, 0.12);
+    transition: transform 0.3s ease;
 }
+
+.boss-photo:hover {
+    transform: scale(1.01);
+}
+
 .boss-name {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
     color: #1a1a1a;
-    margin-bottom: 4px;
+    margin-top: 15px;
 }
+
 .boss-position {
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     color: #777777;
+    margin-top: 4px;
 }
 
-/* Реквизиты */
+/* ===== ИНН / ОГРН ===== */
 .org-info {
     text-align: center;
-    padding: 25px 0 10px;
-    border-top: 1px solid #e8e8e8;
-    font-size: 14px;
-    color: #888888;
-    letter-spacing: 0.3px;
+    padding: 30px 0 20px;
+    border-top: 2px solid #800000;
+    margin-top: 20px;
+    color: #1a1a1a;
 }
-.org-info strong { color: #1a1a1a; }
+
+.org-info p {
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    margin: 6px 0;
+    color: #333333;
+}
+
+.org-info strong {
+    font-weight: 600;
+    color: #1a1a1a;
+}
 
 /* ==================================================== */
-/* ===== СТРАНИЦА УСЛУГ (С ИКОНКАМИ) ===== */
+/* ===== СТРАНИЦА УСЛУГ — КРАСИВОЕ ОФОРМЛЕНИЕ ===== */
 /* ==================================================== */
 
-.services-page-wrapper {
-    max-width: 900px;
+.services-list-wrapper {
+    max-width: 800px;
     margin: 0 auto 60px;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
 }
 
-.service-page-card {
+.service-item {
     display: flex;
     align-items: center;
-    gap: 24px;
-    padding: 22px 30px;
+    gap: 20px;
+    padding: 20px 28px;
     background: #ffffff;
     border-radius: 12px;
     border: 1px solid #e8e8e8;
     transition: all 0.3s ease;
 }
 
-.service-page-card:hover {
+.service-item:hover {
     border-color: #800000;
     box-shadow: 0 4px 20px rgba(128, 0, 0, 0.06);
     transform: translateX(6px);
 }
 
-.service-page-icon {
-    font-size: 32px;
-    min-width: 48px;
+.service-number {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #800000;
+    opacity: 0.4;
+    min-width: 36px;
     text-align: center;
-    opacity: 0.8;
 }
 
-.service-page-content {
+.service-content {
     flex: 1;
 }
 
-.service-page-title {
+.service-name {
     font-family: 'Playfair Display', serif;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
     letter-spacing: 0.3px;
 }
 
-.service-page-desc {
+.service-description {
     font-family: 'Inter', sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
     color: #666666;
-    line-height: 1.6;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -722,9 +746,6 @@ body {
 @media (max-width: 992px) {
     .container { padding: 0 25px; }
     .title-main { font-size: 30px; letter-spacing: 4px; }
-    .hero-title { font-size: 36px; }
-    .principles-grid { grid-template-columns: repeat(2, 1fr); }
-    .services-preview-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 768px) {
@@ -735,32 +756,31 @@ body {
     .nav-right { order: 3; flex-direction: row; width: 100%; justify-content: center; padding-top: 10px; border-top: 1px solid #f0f0f0; }
     .logo-link { order: 1; }
     .logo-img { width: 50px; }
-    .hero-title { font-size: 30px; }
-    .hero-description { font-size: 16px; }
-    .principles-grid { grid-template-columns: 1fr; }
-    .services-preview { padding: 40px 20px; }
-    .services-preview-grid { grid-template-columns: 1fr 1fr; }
-    .cta-title { font-size: 28px; }
-    .btn-primary, .btn-secondary, .btn-cta { padding: 10px 24px; font-size: 14px; }
-    .boss-photo { max-width: 220px; }
     
-    /* Адаптив для страницы услуг */
-    .service-page-card {
-        padding: 18px 22px;
-        gap: 18px;
+    .page-title { font-size: 32px; }
+    .about-title { font-size: 28px; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-card { padding: 20px; }
+    .about-important, .about-value, .about-education { padding: 20px 22px; }
+    
+    .map-container iframe { height: 280px; }
+    .boss-photo { max-width: 280px; }
+    
+    .service-item {
+        padding: 16px 20px;
+        gap: 14px;
     }
-    .service-page-icon {
-        font-size: 26px;
-        min-width: 40px;
-    }
-    .service-page-title {
-        font-size: 19px;
-    }
-    .service-page-desc {
+    .service-number {
         font-size: 14px;
+        min-width: 30px;
+    }
+    .service-name {
+        font-size: 17px;
+    }
+    .service-description {
+        font-size: 13px;
     }
     
-    /* Адаптив для контактов */
     .contact-card {
         padding: 16px 20px;
         gap: 16px;
@@ -782,40 +802,38 @@ body {
     .form-container {
         padding: 30px 25px;
     }
-    .map-container iframe {
-        height: 280px;
-    }
 }
 
 @media (max-width: 480px) {
     .container { padding: 0 15px; }
     .title-main { font-size: 22px; letter-spacing: 2px; }
     .title-sub { font-size: 11px; letter-spacing: 2px; }
-    .hero-title { font-size: 24px; }
-    .hero-description { font-size: 15px; }
-    .services-preview-grid { grid-template-columns: 1fr; }
-    .cta-title { font-size: 24px; }
+    .page-title { font-size: 26px; }
+    .about-title { font-size: 24px; }
+    .about-card-title { font-size: 18px; }
+    .about-important-text, .about-value-text, .about-education-text { font-size: 14px; }
+    
     .map-container iframe { height: 220px; }
     .boss-photo { max-width: 180px; }
+    .boss-name { font-size: 18px; }
+    .boss-position { font-size: 14px; }
     
-    /* Адаптив для страницы услуг */
-    .service-page-card {
-        padding: 16px 18px;
-        gap: 14px;
+    .service-item {
+        padding: 14px 16px;
+        gap: 12px;
         flex-wrap: wrap;
     }
-    .service-page-icon {
-        font-size: 22px;
-        min-width: 34px;
+    .service-number {
+        font-size: 12px;
+        min-width: 26px;
     }
-    .service-page-title {
-        font-size: 17px;
+    .service-name {
+        font-size: 15px;
     }
-    .service-page-desc {
-        font-size: 13px;
+    .service-description {
+        font-size: 12px;
     }
     
-    /* Адаптив для контактов */
     .contact-card {
         padding: 14px 16px;
         gap: 12px;
@@ -837,8 +855,5 @@ body {
     }
     .form-container {
         padding: 20px 18px;
-    }
-    .page-title {
-        font-size: 26px;
     }
 }
