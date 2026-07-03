@@ -382,7 +382,7 @@ body {
 }
 
 /* ==================================================== */
-/* ===== СТРАНИЦА УСЛУГ — КРАСИВОЕ ОФОРМЛЕНИЕ ===== */
+/* ===== СТРАНИЦА УСЛУГ — ОБНОВЛЕННОЕ ОФОРМЛЕНИЕ ===== */
 /* ==================================================== */
 
 .services-list-wrapper {
@@ -395,10 +395,7 @@ body {
 }
 
 .service-item {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 28px;
+    padding: 22px 30px;
     background: #ffffff;
     border-radius: 12px;
     border: 1px solid #e8e8e8;
@@ -411,16 +408,6 @@ body {
     transform: translateX(6px);
 }
 
-.service-number {
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    color: #800000;
-    opacity: 0.4;
-    min-width: 36px;
-    text-align: center;
-}
-
 .service-content {
     flex: 1;
 }
@@ -430,7 +417,7 @@ body {
     font-size: 20px;
     font-weight: 700;
     color: #1a1a1a;
-    margin-bottom: 2px;
+    margin-bottom: 4px;
     letter-spacing: 0.3px;
 }
 
@@ -441,6 +428,44 @@ body {
     color: #666666;
     line-height: 1.5;
     margin: 0;
+}
+
+/* ==================================================== */
+/* ===== ОПИСАНИЕ НА ГЛАВНОЙ — ОБНОВЛЕНИЕ ===== */
+/* ==================================================== */
+
+.about-education-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #444444;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
+    .service-item {
+        padding: 18px 22px;
+    }
+    .service-name {
+        font-size: 17px;
+    }
+    .service-description {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-item {
+        padding: 16px 18px;
+    }
+    .service-name {
+        font-size: 15px;
+    }
+    .service-description {
+        font-size: 12px;
+    }
 }
 
 /* ==================================================== */
