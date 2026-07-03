@@ -24,7 +24,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware',  # Добавлено для статики
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -104,6 +104,3 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'anisiapodkatilova@yandex.ru'
 EMAIL_HOST_PASSWORD = 'yisnsuatcnexlwva'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
-
-# Адрес, куда будут приходить заявки
-CONTACT_EMAIL = 'anisiiaAD@yandex.ru'
