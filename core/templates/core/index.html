@@ -3,52 +3,95 @@
 
 {% block content %}
 
-    <!-- ===== ГЕРОЙ-БЛОК ===== -->
+    <!-- ===== ВСТУПЛЕНИЕ ===== -->
     <section class="hero-section">
         <div class="hero-content">
             <h1 class="hero-title">Юридическая защита ваших интересов</h1>
-            <p class="hero-description">Комплексные юридические услуги для бизнеса и частных лиц. Индивидуальный подход, профессиональная защита и полная конфиденциальность.</p>
+            <p class="hero-description">
+                Мы предлагаем комплексные юридические услуги для бизнеса и частных лиц.
+                Индивидуальный подход, профессиональная защита и полная конфиденциальность.
+            </p>
             <div class="hero-buttons">
-                <a href="{% url 'appointment' %}" class="btn-hero">Записаться на консультацию</a>
-                <a href="{% url 'services' %}" class="btn-hero-outline">Все услуги</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== КОРОТКО О НАС ===== -->
-    <section class="about-short">
-        <div class="about-short-grid">
-            <div class="about-short-item">
-                <h3>Глубокий анализ</h3>
-                <p>Изучаем каждое дело до мельчайших деталей, чтобы видеть полную картину и выбирать наиболее эффективную тактику защиты.</p>
-            </div>
-            <div class="about-short-item">
-                <h3>Индивидуальный подход</h3>
-                <p>Стратегия разрабатывается персонально под вашу ситуацию. Мы не используем шаблонные решения.</p>
-            </div>
-            <div class="about-short-item">
-                <h3>Конфиденциальность</h3>
-                <p>Гарантируем полную сохранность ваших данных и нацелены на достижение результата, экономя ваше время и ресурсы.</p>
+                <a href="{% url 'appointment' %}" class="btn-primary">Записаться на консультацию</a>
+                <a href="{% url 'services' %}" class="btn-secondary">Наши услуги</a>
             </div>
         </div>
     </section>
 
     <!-- ===== ПРИНЦИПЫ РАБОТЫ ===== -->
     <section class="principles-section">
-        <h2 class="principles-title">Почему клиенты доверяют нам</h2>
+        <h2 class="principles-title">Ваша уверенность — наша задача</h2>
         <div class="principles-grid">
             <div class="principle-card">
-                <h3 class="principle-name">Прогнозируем результат</h3>
-                <p class="principle-desc">Мы видим ситуацию комплексно и всегда действуем на опережение, просчитывая все возможные сценарии.</p>
+                <div class="principle-number">01</div>
+                <h3 class="principle-name">Глубокий анализ</h3>
+                <p class="principle-desc">Изучаем каждую деталь дела, чтобы видеть полную картину и выбирать наиболее эффективную стратегию защиты.</p>
             </div>
             <div class="principle-card">
-                <h3 class="principle-name">Работаем на ваш результат</h3>
-                <p class="principle-desc">За каждым обращением стоит человек. Мы защищаем вашу свободу, репутацию, бизнес и будущее.</p>
+                <div class="principle-number">02</div>
+                <h3 class="principle-name">Индивидуальный подход</h3>
+                <p class="principle-desc">Разрабатываем персональную стратегию для вашей ситуации, избегая шаблонных и неэффективных решений.</p>
             </div>
             <div class="principle-card">
-                <h3 class="principle-name">Экспертность и опыт</h3>
-                <p class="principle-desc">Наши юристы и адвокаты имеют многолетнюю практику в различных отраслях права и успешно ведут дела любой сложности.</p>
+                <div class="principle-number">03</div>
+                <h3 class="principle-name">Конфиденциальность</h3>
+                <p class="principle-desc">Гарантируем полную сохранность ваших данных и нацелены на достижение результата с экономией вашего времени.</p>
             </div>
+        </div>
+    </section>
+
+    <!-- ===== УСЛУГИ (КРАСИВОЕ ОФОРМЛЕНИЕ) ===== -->
+    <section class="services-preview">
+        <h2 class="services-preview-title">Наши услуги</h2>
+        <div class="services-preview-grid">
+            <div class="service-preview-item">
+                <span class="service-preview-icon">⚖️</span>
+                <span class="service-preview-name">Семейное право</span>
+                <span class="service-preview-desc">Разводы, раздел имущества, алименты</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">📋</span>
+                <span class="service-preview-name">Трудовое право</span>
+                <span class="service-preview-desc">Трудовые споры, защита прав работников</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">🏛️</span>
+                <span class="service-preview-name">Административное право</span>
+                <span class="service-preview-desc">Обжалование постановлений, защита в судах</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">⚡</span>
+                <span class="service-preview-name">Уголовное право</span>
+                <span class="service-preview-desc">Защита на всех стадиях уголовного процесса</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">🛡️</span>
+                <span class="service-preview-name">Защита прав потребителей</span>
+                <span class="service-preview-desc">Возврат товаров, споры с продавцами</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">🏠</span>
+                <span class="service-preview-name">Жилищное право</span>
+                <span class="service-preview-desc">Приватизация, споры с застройщиками</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">🌍</span>
+                <span class="service-preview-name">Земельное право</span>
+                <span class="service-preview-desc">Земельные споры, оформление прав</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">🏢</span>
+                <span class="service-preview-name">Корпоративное право</span>
+                <span class="service-preview-desc">Регистрация ООО, защита бизнеса</span>
+            </div>
+            <div class="service-preview-item">
+                <span class="service-preview-icon">🎖️</span>
+                <span class="service-preview-name">Правовая защита военнослужащих</span>
+                <span class="service-preview-desc">Социальные гарантии, споры с командованием</span>
+            </div>
+        </div>
+        <div class="services-preview-link">
+            <a href="{% url 'services' %}" class="link-arrow">Смотреть все услуги →</a>
         </div>
     </section>
 
@@ -74,7 +117,7 @@
 
     <!-- ===== РУКОВОДИТЕЛЬ ===== -->
     <section class="boss-section">
-        <h2 class="boss-title">Руководитель</h2>
+        <h2 class="boss-title">Руководитель фирмы</h2>
         <img src="{% static 'core/images/boss.jpg' %}" alt="Руководитель" class="boss-photo">
         <p class="boss-name">Гусев Александр Геннадьевич</p>
         <p class="boss-position">Адвокат, управляющий партнер</p>
