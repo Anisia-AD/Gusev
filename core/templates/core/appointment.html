@@ -4,11 +4,9 @@
     <h1 class="page-title">ЗАЯВКА</h1>
     
     {% if messages %}
-        <div style="max-width: 620px; margin: 0 auto 30px;">
+        <div class="messages">
             {% for message in messages %}
-                <div style="padding: 12px 20px; border-radius: 8px; text-align: center; margin-bottom: 10px; 
-                    {% if message.tags == 'success' %}background: #d4edda; color: #155724; border: 1px solid #c3e6cb;
-                    {% else %}background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb;{% endif %}">
+                <div class="message {% if message.tags %}message-{{ message.tags }}{% endif %}">
                     {{ message }}
                 </div>
             {% endfor %}
@@ -20,22 +18,22 @@
             {% csrf_token %}
             <div class="form-group">
                 <label for="name">ФИО</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" placeholder="Иванов Иван Иванович" required>
             </div>
             <div class="form-group">
                 <label for="phone">Телефон</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" placeholder="+7 (999) 123-45-67" required>
             </div>
             <div class="form-group">
                 <label for="problem">Опишите проблему</label>
-                <textarea id="problem" name="problem" required></textarea>
+                <textarea id="problem" name="problem" placeholder="Опишите вашу ситуацию..." required></textarea>
                 <div class="helper-text">Пожалуйста, опишите вашу ситуацию максимально подробно.</div>
             </div>
             <div class="form-group checkbox-group">
                 <input type="checkbox" id="agree" name="agree" required>
                 <label for="agree">Я согласен(на) на обработку персональных данных</label>
             </div>
-            <button type="submit" class="submit-btn">Отправить</button>
+            <button type="submit" class="submit-btn">Отправить заявку</button>
         </form>
     </div>
 {% endblock %}
