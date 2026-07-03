@@ -30,13 +30,22 @@ def appointment(request):
         
         try:
             subject = 'Новая заявка с сайта Престол Права'
-            message = f'ФИО: {name}\nТелефон: {phone}\nПроблема: {problem}'
+            message = f'''
+            Новая заявка с сайта!
+            
+            ФИО: {name}
+            Телефон: {phone}
+            Проблема: {problem}
+            
+            ---
+            С уважением, сайт "Престол Права"
+            '''
             
             send_mail(
                 subject,
                 message,
                 'anisiapodkatilova@yandex.ru',
-                ['anisiapodkatilova@yandex.ru'],
+                ['anisiiaAD@yandex.ru'],  # Новый адрес для получения заявок
                 fail_silently=False,
             )
             
@@ -44,7 +53,7 @@ def appointment(request):
             return HttpResponseRedirect(reverse('index'))
             
         except Exception as e:
-            messages.error(request, 'Произошла ошибка при отправке. Попробуйте позже.')
+            messages.error(request, 'Произошла ошибка при отправке. Попробуйте позже или свяжитесь с нами по телефону.')
             return render(request, 'core/appointment.html')
     
     return render(request, 'core/appointment.html')
