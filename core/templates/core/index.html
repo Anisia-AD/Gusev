@@ -3,93 +3,74 @@
 
 {% block content %}
 
-    <!-- ===== ВСТУПЛЕНИЕ ===== -->
-    <section class="hero-section">
-        <div class="hero-content">
-            <h1 class="hero-title">Юридическая защита ваших интересов</h1>
-            <p class="hero-description">
-                Мы предлагаем комплексные юридические услуги для бизнеса и частных лиц.
-                Индивидуальный подход, профессиональная защита и полная конфиденциальность.
-            </p>
-            <div class="hero-buttons">
-                <a href="{% url 'appointment' %}" class="btn-primary">Записаться на консультацию</a>
-                <a href="{% url 'services' %}" class="btn-secondary">Наши услуги</a>
-            </div>
-        </div>
-    </section>
+    <!-- Кнопка ЗАПИСЬ -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="{% url 'appointment' %}" class="nav-link" style="display: inline-block; font-size: 22px; padding: 10px 40px;">Запись</a>
+    </div>
 
-    <!-- ===== ПРИНЦИПЫ РАБОТЫ ===== -->
-    <section class="principles-section">
-        <h2 class="principles-title">Ваша уверенность — наша задача</h2>
-        <div class="principles-grid">
-            <div class="principle-card">
-                <div class="principle-number">01</div>
-                <h3 class="principle-name">Глубокий анализ</h3>
-                <p class="principle-desc">Изучаем каждую деталь дела, чтобы видеть полную картину и выбирать наиболее эффективную стратегию защиты.</p>
-            </div>
-            <div class="principle-card">
-                <div class="principle-number">02</div>
-                <h3 class="principle-name">Индивидуальный подход</h3>
-                <p class="principle-desc">Разрабатываем персональную стратегию для вашей ситуации, избегая шаблонных и неэффективных решений.</p>
-            </div>
-            <div class="principle-card">
-                <div class="principle-number">03</div>
-                <h3 class="principle-name">Конфиденциальность</h3>
-                <p class="principle-desc">Гарантируем полную сохранность ваших данных и нацелены на достижение результата с экономией вашего времени.</p>
-            </div>
-        </div>
-    </section>
+    <!-- Кнопка УСЛУГИ (под Записью) -->
+    <div style="text-align: center; margin-top: 15px; margin-bottom: 40px;">
+        <a href="{% url 'services' %}" class="nav-link" style="display: inline-block; font-size: 22px; padding: 10px 40px;">Услуги</a>
+    </div>
 
-    <!-- ===== УСЛУГИ НА ГЛАВНОЙ (БЕЗ ИКОНОК, ПРОСТО СПИСОК) ===== -->
-    <section class="services-preview">
-        <h2 class="services-preview-title">Наши услуги</h2>
-        <div class="services-preview-grid">
-            <div class="service-preview-item">Семейное право</div>
-            <div class="service-preview-item">Трудовое право</div>
-            <div class="service-preview-item">Административное право</div>
-            <div class="service-preview-item">Уголовное право</div>
-            <div class="service-preview-item">Защита прав потребителей</div>
-            <div class="service-preview-item">Правовая защита военнослужащих</div>
-            <div class="service-preview-item">Жилищное право</div>
-            <div class="service-preview-item">Земельное право</div>
-            <div class="service-preview-item">Корпоративное право</div>
-        </div>
-        <div class="services-preview-link">
-            <a href="{% url 'services' %}" class="link-arrow">Смотреть все услуги →</a>
-        </div>
-    </section>
+    <!-- ===== ОПИСАНИЕ АГЕНТСТВА ===== -->
+    <div class="about-section">
+        <h2 class="about-title">Почему обращаются к нам</h2>
+        
+        <div class="about-grid">
+            <div class="about-card">
+                <h3 class="about-card-title">Глубокий анализ</h3>
+                <p class="about-card-desc">Изучаем каждое дело до мельчайших деталей, чтобы видеть полную картину и выбирать наиболее эффективную тактику защиты.</p>
+            </div>
 
-    <!-- ===== ЗАЯВКА ===== -->
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2 class="cta-title">Нужна юридическая помощь?</h2>
-            <p class="cta-desc">Запишитесь на консультацию, и мы обсудим вашу ситуацию, предложим оптимальные пути решения.</p>
-            <a href="{% url 'appointment' %}" class="btn-cta">Оставить заявку</a>
+            <div class="about-card">
+                <h3 class="about-card-title">Индивидуальный подход</h3>
+                <p class="about-card-desc">Стратегия разрабатывается персонально под вашу ситуацию. Мы не используем шаблонные решения — только то, что действительно работает в вашем случае.</p>
+            </div>
+
+            <div class="about-card">
+                <h3 class="about-card-title">Конфиденциальность и результат</h3>
+                <p class="about-card-desc">Мы гарантируем полную сохранность ваших данных и нацелены на достижение результата, экономя ваше время и ресурсы.</p>
+            </div>
         </div>
-    </section>
+
+        <div class="about-important">
+            <h3 class="about-important-title">От выбора специалиста зависит ваше будущее</h3>
+            <p class="about-important-text">Каждое дело требует не просто юридической грамотности, а умения прогнозировать развитие событий и находить нестандартные решения. Мы видим ситуацию комплексно и всегда действуем на опережение.</p>
+        </div>
+
+        <div class="about-value">
+            <h3 class="about-value-title">В центре нашего внимания — человек</h3>
+            <p class="about-value-text">За каждым обращением стоит личная история, переживания и надежды. Мы не просто ведём дела — мы помогаем людям защитить то, что для них важно: свободу, репутацию, бизнес и будущее.</p>
+        </div>
+
+        <div class="about-education">
+            <h3 class="about-education-title">Образование и практика руководителя</h3>
+            <p class="about-education-text" style="color: #999; font-style: italic;">Гусев Александр Геннадьевич — адвокат, управляющий партнер, специализируется на защите прав граждан и бизнеса в судах общей юрисдикции и арбитражных судах.</p>
+        </div>
+    </div>
 
     <!-- ===== КАРТА ===== -->
-    <section class="map-section">
-        <h2 class="map-title">Как нас найти</h2>
-        <div class="map-container">
-            <iframe 
-                src="https://yandex.ru/map-widget/v1/?ll=30.279953,59.939640&z=17&pt=30.279953,59.939640,flag&whatshere[point]=30.279953,59.939640&whatshere[zoom]=17" 
-                allowfullscreen>
-            </iframe>
-        </div>
-    </section>
+    <div class="map-container" style="margin-bottom: 50px;">
+        <iframe 
+            src="https://yandex.ru/map-widget/v1/?ll=30.279953,59.939640&z=17&pt=30.279953,59.939640,flag&whatshere[point]=30.279953,59.939640&whatshere[zoom]=17" 
+            allowfullscreen
+            style="width: 100%; height: 300px; display: block; border: none; border-radius: 12px;">
+        </iframe>
+    </div>
 
     <!-- ===== РУКОВОДИТЕЛЬ ===== -->
-    <section class="boss-section">
-        <h2 class="boss-title">Руководитель фирмы</h2>
+    <div class="boss-section">
+        <h2 class="boss-title">РУКОВОДИТЕЛЬ</h2>
         <img src="{% static 'core/images/boss.jpg' %}" alt="Руководитель" class="boss-photo">
         <p class="boss-name">Гусев Александр Геннадьевич</p>
         <p class="boss-position">Адвокат, управляющий партнер</p>
-    </section>
+    </div>
 
-    <!-- ===== РЕКВИЗИТЫ ===== -->
+    <!-- ===== ИНН / ОГРНИП ===== -->
     <div class="org-info">
-        <p><strong>ИНН:</strong> 352833094053 &nbsp;|&nbsp; <strong>ОГРНИП:</strong> 326350000007548</p>
+        <p><strong>ИНН:</strong> 352833094053</p>
+        <p><strong>ОГРНИП:</strong> 326350000007548</p>
     </div>
 
 {% endblock %}
