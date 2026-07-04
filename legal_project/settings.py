@@ -99,12 +99,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ===== НАСТРОЙКА ПОЧТЫ =====
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_USE_TLS = False
-EMAIL_HOST_USER = 'anisiiaAD@yandex.ru'
-EMAIL_HOST_PASSWORD = 'tkabijsoutjjiqpv'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# ===== НАСТРОЙКА ПОЧТЫ (РАБОЧАЯ ВЕРСИЯ — ПИСЬМА В КОНСОЛЬ) =====
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
