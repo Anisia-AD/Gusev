@@ -13,6 +13,12 @@ DEBUG = os.getenv('DEBUG', 'False') == 'True'
 # Разрешаем ВСЕ хосты (простое решение)
 ALLOWED_HOSTS = ['*']
 
+# ===== ДОБАВЬТЕ ЭТУ СТРОЧКУ =====
+CSRF_TRUSTED_ORIGINS = [
+    'https://anisia-ad-gusev-2e6f.twc1.net',
+    'http://anisia-ad-gusev-2e6f.twc1.net',
+]
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -91,7 +97,6 @@ STATICFILES_DIRS = [
     BASE_DIR / 'core' / 'static',
 ]
 
-# Настройка WhiteNoise для продакшена
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
