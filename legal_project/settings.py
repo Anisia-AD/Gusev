@@ -88,6 +88,7 @@ USE_I18N = True
 
 USE_TZ = True
 
+# ===== НАСТРОЙКА СТАТИЧЕСКИХ ФАЙЛОВ =====
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
@@ -98,5 +99,12 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ===== НАСТРОЙКА ПОЧТЫ (ВРЕМЕННО — ПИСЬМА В КОНСОЛЬ) =====
+# ===== НАСТРОЙКА ПОЧТЫ =====
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_USE_TLS = False
+EMAIL_HOST_USER = 'anisiiaAD@yandex.ru'
+EMAIL_HOST_PASSWORD = 'tkabijsoutjjiqpv'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
