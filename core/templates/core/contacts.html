@@ -1,11 +1,134 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
+    <style>
+        /* ===== КОНТАКТЫ — ПРЯМЫЕ СТИЛИ ===== */
+        .contacts-wrapper {
+            max-width: 700px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 28px;
+            background: #ffffff;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+            transition: all 0.3s ease;
+        }
+        .contact-card:hover {
+            border-color: #800000;
+            box-shadow: 0 4px 20px rgba(128, 0, 0, 0.06);
+        }
+        .contact-icon {
+            font-size: 28px;
+            min-width: 44px;
+            text-align: center;
+        }
+        .contact-info {
+            flex: 1;
+        }
+        .contact-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            color: #999999;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            margin-bottom: 2px;
+        }
+        .contact-value {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 500;
+            color: #1a1a1a;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .contact-value:hover {
+            color: #800000;
+        }
+
+        /* ===== СОЦСЕТИ ===== */
+        .social-section {
+            max-width: 700px;
+            margin: 0 auto 60px;
+            padding: 30px 20px;
+            background: #fafafa;
+            border-radius: 16px;
+            border: 1px solid #e8e8e8;
+            text-align: center;
+        }
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 24px;
+        }
+        .social-grid-modern {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .social-link {
+            text-decoration: none;
+            transition: transform 0.3s ease;
+            display: block;
+        }
+        .social-link:hover {
+            transform: translateY(-5px);
+        }
+        .social-icon-circle {
+            width: 64px;
+            height: 64px;
+            background: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .social-link:hover .social-icon-circle {
+            background: #800000;
+            border-color: #800000;
+            box-shadow: 0 8px 30px rgba(128, 0, 0, 0.2);
+        }
+        .social-icon-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 700;
+            color: #800000;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            transition: color 0.3s ease;
+            text-align: center;
+            line-height: 1.2;
+        }
+        .social-link:hover .social-icon-text {
+            color: #ffffff;
+        }
+        .social-hint {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: #aaaaaa;
+            margin-top: 18px;
+            font-style: italic;
+        }
+    </style>
+
     <h1 class="page-title">КОНТАКТЫ</h1>
     
     <div class="contacts-wrapper">
         <div class="contact-card">
-            <div class="contact-icon"></div>
+            <div class="contact-icon">📞</div>
             <div class="contact-info">
                 <div class="contact-label">Телефон</div>
                 <a href="tel:+79668750590" class="contact-value">+7 966 875 05 90</a>
@@ -13,7 +136,7 @@
         </div>
 
         <div class="contact-card">
-            <div class="contact-icon"></div>
+            <div class="contact-icon">📞</div>
             <div class="contact-info">
                 <div class="contact-label">Телефон</div>
                 <a href="tel:+79669861018" class="contact-value">+7 966 986 10 18</a>
@@ -29,7 +152,7 @@
         </div>
 
         <div class="contact-card">
-            <div class="contact-icon"></div>
+            <div class="contact-icon">📍</div>
             <div class="contact-info">
                 <div class="contact-label">Адрес</div>
                 <div class="contact-value">199004, г. Санкт-Петербург, 8-я линия В.О., 25</div>
@@ -37,7 +160,7 @@
         </div>
 
         <div class="contact-card">
-            <div class="contact-icon"></div>
+            <div class="contact-icon">🕐</div>
             <div class="contact-info">
                 <div class="contact-label">Часы работы</div>
                 <div class="contact-value">Пн–Пт: 10:00 – 19:00</div>
