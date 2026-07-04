@@ -99,5 +99,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ===== НАСТРОЙКА ПОЧТЫ (РАБОЧАЯ ВЕРСИЯ — ПИСЬМА В КОНСОЛЬ) =====
+# ===== НАСТРОЙКА ПОЧТЫ (КОНСОЛЬНЫЙ ВЫВОД — 100% РАБОТАЕТ) =====
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
