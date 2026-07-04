@@ -10,10 +10,8 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-# Разрешаем ВСЕ хосты (простое решение)
 ALLOWED_HOSTS = ['*']
 
-# ===== ДОБАВЬТЕ ЭТУ СТРОЧКУ =====
 CSRF_TRUSTED_ORIGINS = [
     'https://anisia-ad-gusev-2e6f.twc1.net',
     'http://anisia-ad-gusev-2e6f.twc1.net',
@@ -90,7 +88,6 @@ USE_I18N = True
 
 USE_TZ = True
 
-# ===== НАСТРОЙКА СТАТИЧЕСКИХ ФАЙЛОВ =====
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 STATICFILES_DIRS = [
@@ -101,11 +98,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ===== НАСТРОЙКА ПОЧТЫ =====
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.yandex.ru'
-EMAIL_PORT = 465
-EMAIL_USE_SSL = True
-EMAIL_HOST_USER = 'anisiapodkatilova@yandex.ru'
-EMAIL_HOST_PASSWORD = 'yisnsuatcnexlwva'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+# ===== НАСТРОЙКА ПОЧТЫ (ВРЕМЕННО — ПИСЬМА В КОНСОЛЬ) =====
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
