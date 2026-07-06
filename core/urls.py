@@ -1,10 +1,13 @@
-from django.contrib import admin
-from django.urls import path, include
+from django.urls import path
+from . import views
+
+print("✅ Загрузка core/urls.py...")
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('core.urls')),
+    path('', views.index, name='index'),
+    path('services/', views.services, name='services'),
+    path('contacts/', views.contacts, name='contacts'),
+    path('appointment/', views.appointment, name='appointment'),
 ]
 
-# ПРИНУДИТЕЛЬНАЯ ПЕРЕЗАГРУЗКА (убедитесь, что маршруты загружены)
-print("✅ URL-адреса загружены!")
+print("✅ Маршруты core загружены!")
