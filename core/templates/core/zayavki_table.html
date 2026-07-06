@@ -1,9 +1,25 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1 class="page-title">ЗАЯВКИ</h1>
+    <h1 class="page-title" style="text-align: center;">ЗАЯВКИ</h1>
     
     <div class="zayavki-container">
+        {% if appointments %}
+            <div style="text-align: right; margin-bottom: 15px;">
+                <form method="post" action="{% url 'zayavki' %}" style="display: inline;">
+                    {% csrf_token %}
+                    <input type="hidden" name="delete_all" value="true">
+                    <button type="submit" 
+                            style="background: #c62828; color: white; border: none; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 14px; transition: all 0.3s ease;"
+                            onmouseover="this.style.background='#b71c1c'"
+                            onmouseout="this.style.background='#c62828'"
+                            onclick="return confirm('Удалить все заявки?')">
+                        🗑️ Удалить все
+                    </button>
+                </form>
+            </div>
+        {% endif %}
+
         <table class="zayavki-table">
             <thead>
                 <tr>
@@ -12,7 +28,7 @@
                     <th>Телефон</th>
                     <th>Проблема</th>
                     <th>Дата</th>
-                    <th>Статус</th>
+                    <th style="text-align: center;">Статус</th>
                 </tr>
             </thead>
             <tbody>
@@ -23,12 +39,24 @@
                     <td>{{ item.phone }}</td>
                     <td>{{ item.problem|truncatechars:50 }}</td>
                     <td>{{ item.created_at|date:"d.m.Y H:i" }}</td>
-                    <td>
-                        {% if item.is_processed %}
-                            <span class="status-processed">Обработано</span>
-                        {% else %}
-                            <span class="status-new">Новая</span>
-                        {% endif %}
+                    <td style="text-align: center;">
+                        <form method="post" action="{% url 'zayavki' %}" style="display: inline;">
+                            {% csrf_token %}
+                            <input type="hidden" name="toggle_status" value="{{ item.id }}">
+                            <button type="submit" 
+                                    style="border: none; padding: 5px 12px; border-radius: 4px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600; transition: all 0.3s ease;
+                                           {% if item.is_processed %}
+                                               background: #27ae60; color: white;
+                                           {% else %}
+                                               background: #e67e22; color: white;
+                                           {% endif %}">
+                                {% if item.is_processed %}
+                                    ✅ Обработано
+                                {% else %}
+                                    🟡 Новая
+                                {% endif %}
+                            </button>
+                        </form>
                     </td>
                 </tr>
                 {% empty %}
@@ -76,14 +104,6 @@
         }
         .zayavki-table tr:nth-child(even):hover td {
             background: #f0f0f0;
-        }
-        .status-new {
-            color: #e67e22;
-            font-weight: 600;
-        }
-        .status-processed {
-            color: #27ae60;
-            font-weight: 600;
         }
         @media (max-width: 768px) {
             .zayavki-table th,
