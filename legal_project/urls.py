@@ -5,6 +5,3 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
 ]
-
-# ПРИНУДИТЕЛЬНАЯ ПЕРЕЗАГРУЗКА (убедитесь, что маршруты загружены)
-print("✅ URL-адреса загружены!")
