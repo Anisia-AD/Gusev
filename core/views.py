@@ -1,4 +1,3 @@
-cat > core/views.py << 'EOF'
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
@@ -46,5 +45,4 @@ def appointment(request):
     return render(request, 'core/appointment.html')
 
 def zayavki(request):
-    return HttpResponse("Страница заявок работает! Проверка.")
-EOF
+    return HttpResponse("Страница заявок работает")
