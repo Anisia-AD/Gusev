@@ -44,7 +44,4 @@ def appointment(request):
             return render(request, 'core/appointment.html')
     
     return render(request, 'core/appointment.html')
-
-def zayavki(request):
-    return render(request, 'core/zayavki.html')
 EOF
