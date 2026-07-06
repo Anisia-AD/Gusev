@@ -29,7 +29,6 @@ def appointment(request):
             return render(request, 'core/appointment.html')
         
         try:
-            # СОХРАНЯЕМ ЗАЯВКУ В БАЗУ ДАННЫХ
             Appointment.objects.create(
                 name=name,
                 phone=phone,
@@ -44,3 +43,8 @@ def appointment(request):
             return render(request, 'core/appointment.html')
     
     return render(request, 'core/appointment.html')
+
+# ===== НОВАЯ ФУНКЦИЯ ДЛЯ ПРОСМОТРА ЗАЯВОК =====
+def zayavki(request):
+    appointments = Appointment.objects.all().order_by('-created_at')
+    return render(request, 'core/zayavki.html', {'appointments': appointments})
