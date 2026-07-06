@@ -1,9 +1,10 @@
-from django.urls import path
-from . import views
+from django.contrib import admin
+from django.urls import path, include
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('services/', views.services, name='services'),
-    path('contacts/', views.contacts, name='contacts'),
-    path('appointment/', views.appointment, name='appointment'),
+    path('admin/', admin.site.urls),
+    path('', include('core.urls')),
 ]
+
+# ПРИНУДИТЕЛЬНАЯ ПЕРЕЗАГРУЗКА (убедитесь, что маршруты загружены)
+print("✅ URL-адреса загружены!")
