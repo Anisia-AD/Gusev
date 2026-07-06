@@ -1,106 +1,78 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <h1 class="page-title">ЗАЯВКИ</h1>
-    
-    <div class="zayavki-container">
-        <table class="zayavki-table">
-            <thead>
-                <tr>
-                    <th>№</th>
-                    <th>ФИО</th>
-                    <th>Телефон</th>
-                    <th>Проблема</th>
-                    <th>Дата</th>
-                    <th>Статус</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for item in appointments %}
-                <tr>
-                    <td>{{ forloop.counter }}</td>
-                    <td>{{ item.name }}</td>
-                    <td>{{ item.phone }}</td>
-                    <td>{{ item.problem|truncatechars:50 }}</td>
-                    <td>{{ item.created_at|date:"d.m.Y H:i" }}</td>
-                    <td>
-                        {% if item.is_processed %}
-                            <span class="status-processed">✅ Обработано</span>
-                        {% else %}
-                            <span class="status-new">🟡 Новая</span>
-                        {% endif %}
-                    </td>
-                </tr>
-                {% empty %}
-                <tr>
-                    <td colspan="6" style="text-align: center; padding: 40px; color: #999;">Заявок пока нет</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-    </div>
-
     <style>
-        .zayavki-container {
-            max-width: 1000px;
-            margin: 0 auto 60px;
-            padding: 0 20px;
-            overflow-x: auto;
+        .zayavki-login {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 40px 30px;
+            background: #fafafa;
+            border-radius: 12px;
+            border: 1px solid #e8e8e8;
+            text-align: center;
         }
-        .zayavki-table {
-            width: 100%;
-            border-collapse: collapse;
+        .zayavki-login h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px;
+            color: #800000;
+            margin-bottom: 10px;
+        }
+        .zayavki-login p {
             font-family: 'Inter', sans-serif;
             font-size: 14px;
+            color: #666;
+            margin-bottom: 25px;
         }
-        .zayavki-table th {
+        .zayavki-login input[type="password"] {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+            font-family: 'Inter', sans-serif;
+        }
+        .zayavki-login input[type="password"]:focus {
+            outline: none;
+            border-color: #800000;
+        }
+        .zayavki-login button {
+            width: 100%;
+            padding: 12px;
             background: #800000;
             color: #ffffff;
-            padding: 12px 16px;
-            text-align: left;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
             font-weight: 600;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
             text-transform: uppercase;
-            font-size: 12px;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
         }
-        .zayavki-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #e8e8e8;
-            color: #1a1a1a;
+        .zayavki-login button:hover {
+            background: #1a1a1a;
         }
-        .zayavki-table tr:hover td {
-            background: #fafafa;
-        }
-        .zayavki-table tr:nth-child(even) td {
-            background: #f9f9f9;
-        }
-        .zayavki-table tr:nth-child(even):hover td {
-            background: #f0f0f0;
-        }
-        .status-new {
-            color: #e67e22;
-            font-weight: 600;
-        }
-        .status-processed {
-            color: #27ae60;
-            font-weight: 600;
-        }
-        @media (max-width: 768px) {
-            .zayavki-table th,
-            .zayavki-table td {
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-        }
-        @media (max-width: 480px) {
-            .zayavki-table th,
-            .zayavki-table td {
-                padding: 6px 8px;
-                font-size: 11px;
-            }
-            .zayavki-table th {
-                font-size: 10px;
-            }
+        .zayavki-login .error {
+            color: #c62828;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: #ffebee;
+            border-radius: 6px;
         }
     </style>
+
+    <div class="zayavki-login">
+        <h2>🔐 Доступ к заявкам</h2>
+        <p>Введите пароль для просмотра заявок</p>
+        
+        <form method="post" action="{% url 'zayavki' %}">
+            {% csrf_token %}
+            <input type="password" name="password" placeholder="Введите пароль" required>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
 {% endblock %}
