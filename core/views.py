@@ -45,7 +45,7 @@ def appointment(request):
     return render(request, 'core/appointment.html')
 
 def zayavki(request):
-    # Проверка пароля через POST-запрос
+    # Обработка POST-запроса (ввод пароля)
     if request.method == 'POST':
         password = request.POST.get('password', '')
         if password == '1583gusev':
@@ -54,5 +54,5 @@ def zayavki(request):
         else:
             return render(request, 'core/zayavki.html', {'error': 'Неверный пароль'})
     
-    # Если GET-запрос — показываем форму ввода пароля
+    # GET-запрос — показываем форму ввода пароля
     return render(request, 'core/zayavki.html')
