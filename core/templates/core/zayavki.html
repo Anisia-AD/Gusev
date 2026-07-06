@@ -66,9 +66,13 @@
     </style>
 
     <div class="zayavki-login">
-        <h2>🔐 Доступ к заявкам</h2>
+        <h2>Доступ к заявкам</h2>
         <p>Введите пароль для просмотра заявок</p>
-        
+
+        {% if error %}
+            <div class="error">{{ error }}</div>
+        {% endif %}
+
         <form method="post" action="{% url 'zayavki' %}">
             {% csrf_token %}
             <input type="password" name="password" placeholder="Введите пароль" required>
