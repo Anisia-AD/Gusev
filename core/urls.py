@@ -1,4 +1,3 @@
-cat > core/urls.py << 'EOF'
 from django.urls import path
 from . import views
 
@@ -8,4 +7,3 @@ urlpatterns = [
     path('contacts/', views.contacts, name='contacts'),
     path('appointment/', views.appointment, name='appointment'),
 ]
-EOF
