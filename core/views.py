@@ -45,14 +45,4 @@ def appointment(request):
     return render(request, 'core/appointment.html')
 
 def zayavki(request):
-    # Проверка пароля через POST-запрос
-    if request.method == 'POST':
-        password = request.POST.get('password', '')
-        if password == '1583gusev':
-            appointments = Appointment.objects.all().order_by('-created_at')
-            return render(request, 'core/zayavki_table.html', {'appointments': appointments})
-        else:
-            return render(request, 'core/zayavki.html', {'error': 'Неверный пароль'})
-    
-    # GET-запрос — показываем форму ввода пароля
-    return render(request, 'core/zayavki.html')
+    return HttpResponse("Страница заявок работает!")
