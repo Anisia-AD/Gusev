@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.urls import reverse
 from django.contrib import messages
 from .models import Appointment
@@ -44,7 +44,10 @@ def appointment(request):
     
     return render(request, 'core/appointment.html')
 
-# ===== НОВАЯ ФУНКЦИЯ ДЛЯ ПРОСМОТРА ЗАЯВОК =====
 def zayavki(request):
+    # Проверка пароля
+    if request.GET.get('password') != '1583gusev':
+        return HttpResponse("Доступ запрещён. Неверный пароль.")
+    
     appointments = Appointment.objects.all().order_by('-created_at')
     return render(request, 'core/zayavki.html', {'appointments': appointments})
