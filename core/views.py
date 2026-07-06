@@ -4,22 +4,16 @@ from django.urls import reverse
 from django.contrib import messages
 from .models import Appointment
 
-print("✅ Загрузка core/views.py...")
-
 def index(request):
-    print("✅ Вызов index()")
     return render(request, 'core/index.html')
 
 def services(request):
-    print("✅ Вызов services()")
     return render(request, 'core/services.html')
 
 def contacts(request):
-    print("✅ Вызов contacts()")
     return render(request, 'core/contacts.html')
 
 def appointment(request):
-    print("✅ Вызов appointment()")
     if request.method == 'POST':
         name = request.POST.get('name', '').strip()
         phone = request.POST.get('phone', '').strip()
@@ -45,7 +39,6 @@ def appointment(request):
             return HttpResponseRedirect(reverse('index'))
             
         except Exception as e:
-            print(f"❌ Ошибка в appointment(): {e}")
             messages.error(request, 'Произошла ошибка. Попробуйте позже.')
             return render(request, 'core/appointment.html')
     
