@@ -1,8 +1,8 @@
 from django.shortcuts import render
-from django.core.mail import send_mail
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from django.contrib import messages
+from .models import Appointment
 
 def index(request):
     return render(request, 'core/index.html')
@@ -29,31 +29,18 @@ def appointment(request):
             return render(request, 'core/appointment.html')
         
         try:
-            subject = 'Новая заявка с сайта Престол Права'
-            message = f'''
-            Новая заявка с сайта!
-            
-            ФИО: {name}
-            Телефон: {phone}
-            Проблема: {problem}
-            
-            ---
-            С уважением, сайт "Престол Права"
-            '''
-            
-            send_mail(
-                subject,
-                message,
-                'anisiapodkatilova@yandex.ru',
-                ['anisiiaAD@yandex.ru'],  # Новый адрес для получения заявок
-                fail_silently=False,
+            # СОХРАНЯЕМ ЗАЯВКУ В БАЗУ ДАННЫХ
+            Appointment.objects.create(
+                name=name,
+                phone=phone,
+                problem=problem
             )
             
             messages.success(request, 'Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.')
             return HttpResponseRedirect(reverse('index'))
             
         except Exception as e:
-            messages.error(request, 'Произошла ошибка при отправке. Попробуйте позже или свяжитесь с нами по телефону.')
+            messages.error(request, 'Произошла ошибка. Попробуйте позже.')
             return render(request, 'core/appointment.html')
     
     return render(request, 'core/appointment.html')
