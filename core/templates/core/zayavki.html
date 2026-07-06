@@ -1,0 +1,106 @@
+{% extends 'core/base.html' %}
+
+{% block content %}
+    <h1 class="page-title">ЗАЯВКИ</h1>
+    
+    <div class="zayavki-container">
+        <table class="zayavki-table">
+            <thead>
+                <tr>
+                    <th>№</th>
+                    <th>ФИО</th>
+                    <th>Телефон</th>
+                    <th>Проблема</th>
+                    <th>Дата</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in appointments %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.phone }}</td>
+                    <td>{{ item.problem|truncatechars:50 }}</td>
+                    <td>{{ item.created_at|date:"d.m.Y H:i" }}</td>
+                    <td>
+                        {% if item.is_processed %}
+                            <span class="status-processed">✅ Обработано</span>
+                        {% else %}
+                            <span class="status-new">🟡 Новая</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% empty %}
+                <tr>
+                    <td colspan="6" style="text-align: center; padding: 40px; color: #999;">Заявок пока нет</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <style>
+        .zayavki-container {
+            max-width: 1000px;
+            margin: 0 auto 60px;
+            padding: 0 20px;
+            overflow-x: auto;
+        }
+        .zayavki-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+        }
+        .zayavki-table th {
+            background: #800000;
+            color: #ffffff;
+            padding: 12px 16px;
+            text-align: left;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 12px;
+            letter-spacing: 0.5px;
+        }
+        .zayavki-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #e8e8e8;
+            color: #1a1a1a;
+        }
+        .zayavki-table tr:hover td {
+            background: #fafafa;
+        }
+        .zayavki-table tr:nth-child(even) td {
+            background: #f9f9f9;
+        }
+        .zayavki-table tr:nth-child(even):hover td {
+            background: #f0f0f0;
+        }
+        .status-new {
+            color: #e67e22;
+            font-weight: 600;
+        }
+        .status-processed {
+            color: #27ae60;
+            font-weight: 600;
+        }
+        @media (max-width: 768px) {
+            .zayavki-table th,
+            .zayavki-table td {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .zayavki-table th,
+            .zayavki-table td {
+                padding: 6px 8px;
+                font-size: 11px;
+            }
+            .zayavki-table th {
+                font-size: 10px;
+            }
+        }
+    </style>
+{% endblock %}
