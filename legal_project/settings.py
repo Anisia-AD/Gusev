@@ -10,12 +10,27 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 
 DEBUG = os.getenv('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['*']
+# ===== БЕЗОПАСНОСТЬ =====
+ALLOWED_HOSTS = [
+    'anisia-ad-gusev-2e6f.twc1.net',
+    'prestol-prava.ru',
+    'www.prestol-prava.ru',
+    'localhost',
+    '127.0.0.1',
+]
 
 CSRF_TRUSTED_ORIGINS = [
+    'https://prestol-prava.ru',
+    'http://prestol-prava.ru',
+    'https://www.prestol-prava.ru',
+    'http://www.prestol-prava.ru',
     'https://anisia-ad-gusev-2e6f.twc1.net',
     'http://anisia-ad-gusev-2e6f.twc1.net',
 ]
+
+CSRF_COOKIE_DOMAIN = '.prestol-prava.ru'
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = False
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -99,5 +114,5 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ===== НАСТРОЙКА ПОЧТЫ (КОНСОЛЬНЫЙ ВЫВОД — РАБОТАЕТ 100%) =====
+# ===== НАСТРОЙКА ПОЧТЫ (КОНСОЛЬНЫЙ ВЫВОД) =====
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
