@@ -1,4 +1,3 @@
-cat > core/views.py << 'EOF'
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -44,4 +43,3 @@ def appointment(request):
             return render(request, 'core/appointment.html')
     
     return render(request, 'core/appointment.html')
-EOF
