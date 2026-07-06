@@ -25,9 +25,9 @@
                     <td>{{ item.created_at|date:"d.m.Y H:i" }}</td>
                     <td>
                         {% if item.is_processed %}
-                            <span class="status-processed">✅ Обработано</span>
+                            <span class="status-processed">Обработано</span>
                         {% else %}
-                            <span class="status-new">🟡 Новая</span>
+                            <span class="status-new">Новая</span>
                         {% endif %}
                     </td>
                 </tr>
