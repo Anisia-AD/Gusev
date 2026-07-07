@@ -1,137 +1,10 @@
 {% extends 'core/base.html' %}
 
 {% block content %}
-    <style>
-        /* ===== КОНТАКТЫ — ПРЯМЫЕ СТИЛИ ===== */
-        .contacts-wrapper {
-            max-width: 700px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-        .contact-card {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            padding: 20px 28px;
-            background: #ffffff;
-            border-radius: 12px;
-            border: 1px solid #e8e8e8;
-            transition: all 0.3s ease;
-        }
-        .contact-card:hover {
-            border-color: #800000;
-            box-shadow: 0 4px 20px rgba(128, 0, 0, 0.06);
-        }
-        .contact-icon {
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            color: #800000;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            min-width: 80px;
-            text-align: left;
-        }
-        .contact-info {
-            flex: 1;
-        }
-        .contact-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 11px;
-            font-weight: 600;
-            color: #999999;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            margin-bottom: 2px;
-        }
-        .contact-value {
-            font-family: 'Inter', sans-serif;
-            font-size: 18px;
-            font-weight: 500;
-            color: #1a1a1a;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .contact-value:hover {
-            color: #800000;
-        }
-
-        /* ===== СОЦСЕТИ ===== */
-        .social-section {
-            max-width: 700px;
-            margin: 0 auto 60px;
-            padding: 30px 20px;
-            background: #fafafa;
-            border-radius: 16px;
-            border: 1px solid #e8e8e8;
-            text-align: center;
-        }
-        .social-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 20px;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 24px;
-        }
-        .social-grid-modern {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .social-link {
-            text-decoration: none;
-            transition: transform 0.3s ease;
-            display: block;
-        }
-        .social-link:hover {
-            transform: translateY(-5px);
-        }
-        .social-icon-circle {
-            width: 64px;
-            height: 64px;
-            background: #ffffff;
-            border: 2px solid #e0e0e0;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .social-link:hover .social-icon-circle {
-            background: #800000;
-            border-color: #800000;
-            box-shadow: 0 8px 30px rgba(128, 0, 0, 0.2);
-        }
-        .social-icon-text {
-            font-family: 'Inter', sans-serif;
-            font-size: 10px;
-            font-weight: 700;
-            color: #800000;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
-            transition: color 0.3s ease;
-            text-align: center;
-            line-height: 1.2;
-        }
-        .social-link:hover .social-icon-text {
-            color: #ffffff;
-        }
-        .social-hint {
-            font-family: 'Inter', sans-serif;
-            font-size: 13px;
-            color: #aaaaaa;
-            margin-top: 18px;
-            font-style: italic;
-        }
-    </style>
-
-    <h1 class="page-title" style="text-align: center;">КОНТАКТЫ</h1>
+    <h1 class="page-title">КОНТАКТЫ</h1>
     
     <div class="contacts-wrapper">
+        <!-- Телефоны -->
         <div class="contact-card">
             <div class="contact-icon">Телефон</div>
             <div class="contact-info">
@@ -148,14 +21,16 @@
             </div>
         </div>
 
+        <!-- Email -->
         <div class="contact-card">
             <div class="contact-icon">Email</div>
             <div class="contact-info">
                 <div class="contact-label">Email</div>
-                <a href="mailto:sanegus@mail.ru" class="contact-value">sanegus@mail.ru</a>
+                <a href="mailto:prestol.prava@mail.ru" class="contact-value">prestol.prava@mail.ru</a>
             </div>
         </div>
 
+        <!-- Адрес -->
         <div class="contact-card">
             <div class="contact-icon">Адрес</div>
             <div class="contact-info">
@@ -164,6 +39,7 @@
             </div>
         </div>
 
+        <!-- Время работы -->
         <div class="contact-card">
             <div class="contact-icon">Часы работы</div>
             <div class="contact-info">
@@ -173,6 +49,7 @@
         </div>
     </div>
 
+    <!-- Соцсети и мессенджеры -->
     <div class="social-section">
         <h3 class="social-title">Мы в соцсетях и мессенджерах</h3>
         <div class="social-grid-modern">
@@ -186,14 +63,9 @@
                     <span class="social-icon-text">Telegram</span>
                 </div>
             </a>
-            <a href="https://vk.ru/id33505885" class="social-link" target="_blank">
+            <a href="https://vk.ru/id1121547074" class="social-link" target="_blank">
                 <div class="social-icon-circle">
                     <span class="social-icon-text">ВКонтакте</span>
-                </div>
-            </a>
-            <a href="#" class="social-link" target="_blank">
-                <div class="social-icon-circle">
-                    <span class="social-icon-text">WhatsApp</span>
                 </div>
             </a>
         </div>
