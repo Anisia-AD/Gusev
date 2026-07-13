@@ -37,7 +37,14 @@
                     <td>{{ forloop.counter }}</td>
                     <td>{{ item.name }}</td>
                     <td>{{ item.phone }}</td>
-                    <td>{{ item.problem|truncatechars:50 }}</td>
+                    <td>
+                        {{ item.problem|truncatechars:50 }}
+                        {% if item.problem|length > 50 %}
+                            <a href="#" onclick="alert('{{ item.problem|escapejs }}'); return false;" style="color: #800000; text-decoration: underline; cursor: pointer;">
+                                Подробнее
+                            </a>
+                        {% endif %}
+                    </td>
                     <td>{{ item.created_at|date:"d.m.Y H:i" }}</td>
                     <td style="text-align: center;">
                         <form method="post" action="{% url 'zayavki' %}" style="display: inline;">
